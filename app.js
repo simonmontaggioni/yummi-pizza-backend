@@ -1,5 +1,6 @@
 const express = require("express");
 const { APP_NAME } = require("./config");
+const productRoutes = require("./routes/ProductRoutes");
 
 const app = express();
 
@@ -19,13 +20,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/api/", (req, res, next) => {
-  console.log(req.body);
-  res.status(200).json({ message: "Post request received successfully" });
-});
+// app.use("/api", (req, res, next) => {
+//   res.status(200).json({ message: `Welcome to the ${APP_NAME} API.` });
+// });
 
-app.use("/api/", (req, res, next) => {
-  res.status(200).json({ message: `Welcome to the ${APP_NAME} API.` });
-});
+app.use("/api/products", productRoutes);
 
 module.exports = app;
