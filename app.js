@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const { APP_NAME } = require("./config");
 const productRoutes = require("./routes/ProductRoutes");
 
@@ -20,10 +21,10 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/api", (req, res, next) => {
-//   res.status(200).json({ message: `Welcome to the ${APP_NAME} API.` });
-// });
-
+app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/api/products", productRoutes);
+app.use("/api", (req, res, next) => {
+  res.status(200).json({ message: `Welcome to the ${APP_NAME} API.` });
+});
 
 module.exports = app;

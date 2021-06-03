@@ -5,6 +5,7 @@ const products = [
     ingredients: ["tomato paste", "mozarrella cheese"],
     id: "pizza-1",
     image: "margarita",
+    imageUrl: "localhost:3001/images/margarita.jpg",
   },
   {
     name: "stagioni",
@@ -20,6 +21,7 @@ const products = [
     ],
     id: "pizza-2",
     image: "stagioni",
+    imageUrl: "localhost:3001/images/stagioni.jpg",
   },
   {
     name: "mexicana",
@@ -33,6 +35,7 @@ const products = [
     ],
     id: "pizza-3",
     image: "mexicana",
+    imageUrl: "localhost:3001/images/mexicana.jpg",
   },
   {
     name: "primavera",
@@ -40,6 +43,7 @@ const products = [
     ingredients: ["mozzarella cheese", "paprika", "corn", "egg", "tomato"],
     id: "pizza-4",
     image: "primavera",
+    imageUrl: "localhost:3001/images/primavera.jpg",
   },
   {
     name: "pastorella",
@@ -53,6 +57,7 @@ const products = [
     ],
     id: "pizza-5",
     image: "pastorella",
+    imageUrl: "localhost:3001/images/pastorella.jpg",
   },
   {
     name: "hawaiana",
@@ -60,6 +65,7 @@ const products = [
     ingredients: ["pineapple", "ham", "tomato", "mozzarella cheese", "spices"],
     id: "pizza-6",
     image: "hawaiana",
+    imageUrl: "localhost:3001/images/hawaiana.jpg",
   },
   {
     name: "napolitana",
@@ -73,6 +79,7 @@ const products = [
     ],
     id: "pizza-7",
     image: "napolitana",
+    imageUrl: "localhost:3001/images/napolitana.jpg",
   },
   {
     name: "la marinara",
@@ -80,6 +87,7 @@ const products = [
     ingredients: ["tomato paste", "oregano", "garlic", "basil"],
     id: "pizza-8",
     image: "lamarinara",
+    imageUrl: "localhost:3001/images/lamarinara.jpg",
   },
 ];
 
