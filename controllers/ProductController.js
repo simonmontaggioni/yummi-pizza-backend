@@ -1,16 +1,14 @@
 const fs = require("fs");
-const ProductModel = require("../models/Product");
-const Product = new ProductModel();
+const Product = require("../models/Product");
 
 exports.createProduct = (req, res, next) => {
   req.body.product = JSON.parse(req.body.product);
   const url = `${req.protocol}://${req.get("host")}`;
-  const product = new ProductModel({
-    name: req.body.name,
-    ingredients: req.body.ingredients,
+  const product = new Product({
+    name: req.body.product.name,
+    ingredients: req.body.product.ingredients,
     imageUrl: `${url}/images/${req.file.filename}`,
-    price: req.body.price,
-    id: req.body.id,
+    price: req.body.product.price,
   });
 
   product

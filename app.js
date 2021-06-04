@@ -1,7 +1,27 @@
 const express = require("express");
 const path = require("path");
-const { APP_NAME } = require("./config");
+const mongoose = require("mongoose");
+const {
+  APP_NAME,
+  DB_HOST,
+  DB_NAME,
+  DB_USER,
+  DB_PASSWORD,
+} = require("./config");
 const productRoutes = require("./routes/ProductRoutes");
+
+mongoose
+  .connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Successfully connected to MongoDB Atlas");
+  })
+  .catch((error) => {
+    console.log("Unable to connect to MongoDB Atlas");
+    console.error(error);
+  });
 
 const app = express();
 
